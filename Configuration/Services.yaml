@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  RKL\RedirectsExport\:
+    resource: '../Classes/*'
+    exclude: '../Classes/Domain/Model/*'
+
+  RKL\RedirectsExport\Redirects\EventListener\ModifyRedirectManagementControllerViewDataEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'redirects-export/modify-redirect-management-controller-view-data'

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:redirects_export/Resources/Private/Language/Modules/locallang.xlf" date="2025-04-18T00:00:00Z" product-name="redirects_export">
+		<header/>
+		<body>
+			<trans-unit id="exportRedirects">
+				<source>Export Redirects</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

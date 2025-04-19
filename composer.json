@@ -1,0 +1,53 @@
+{
+	"name": "rkl/redirects-export",
+	"description": "Allows you to export redirects from the redirects module to a CSV file.",
+	"type": "typo3-cms-extension",
+	"keywords": ["TYPO3 CMS", "typo3", "redirects", "export", "csv", "excel"],
+	"license": ["GPL-2.0-or-later"],
+	"homepage": "https://github.com/RKlingler/redirects_export",
+	"authors": [
+		{
+			"name": "Ruwen Klingler",
+            "role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/RKlingler/redirects_export/issues"
+	},
+	"require": {
+		"typo3/cms-core": "^12.4 || ^13.4",
+		"typo3/cms-frontend": "^12.4 || ^13.4",
+        "typo3/cms-redirects": "^12.4 || ^13.4"
+	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^3.65",
+		"helmich/typo3-typoscript-lint": "^3.2",
+		"saschaegerer/phpstan-typo3": "^2.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"RKL\\RedirectsExport\\": "Classes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"RKL\\RedirectsExport\\Tests\\": "Tests"
+		}
+	},
+	"config": {
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
+		"vendor-dir": ".Build/vendor",
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"app-dir": ".Build",
+			"extension-key": "redirects_export",
+			"web-dir": ".Build/web"
+		}
+	}
+}
