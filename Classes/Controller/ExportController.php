@@ -48,7 +48,7 @@ final class ExportController
 			// add formatted duplicates of datetime columns
 			foreach (['updatedon', 'createdon', 'starttime', 'endtime', 'lasthiton'] as $column) {
 				if (array_key_exists($column, $redirect)) {
-					$redirect[$column . '_formatted'] = ($redirect[$column] !== 0 ? date('y-m-d H:i:s', $redirect[$column]) : 0);
+					$redirect[$column . '_formatted'] = ($redirect[$column] !== 0 ? date('Y-m-d H:i:s', $redirect[$column]) : 0);
 				}
 			}
 
