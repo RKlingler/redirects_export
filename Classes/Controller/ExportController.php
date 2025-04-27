@@ -18,6 +18,7 @@ use RKL\RedirectsExport\Repository\ExportDemand;
 use RKL\RedirectsExport\Service\CsvService;
 use TYPO3\CMS\Backend\Attribute\AsController;
 use TYPO3\CMS\Frontend\Typolink\LinkFactory;
+use TYPO3\CMS\Frontend\Typolink\UnableToLinkException;
 use TYPO3\CMS\Redirects\Repository\RedirectRepository;
 
 #[AsController]
@@ -41,9 +42,13 @@ final class ExportController
 		$csvData = [];
 
 		foreach ($redirects as $redirect) {
-			// add rendered url
-			$linkResult = $this->linkFactory->createUri($redirect['target']);
-			$redirect['target_url'] = $linkResult->getUrl();
+			// add rendered url or empty string if the redirect target is broken
+			try {
+				$linkResult = $this->linkFactory->createUri($redirect['target']);
+				$redirect['target_url'] = $linkResult->getUrl();
+			} catch (UnableToLinkException $e) {
+				$redirect['target_url'] = '';
+			}
 
 			// add formatted duplicates of datetime columns
 			foreach (['updatedon', 'createdon', 'starttime', 'endtime', 'lasthiton'] as $column) {

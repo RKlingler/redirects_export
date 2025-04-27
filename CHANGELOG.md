@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Years in formatted datetime strings are now exported with four digits to avoid faulty conversions when importing the csv into Excel.
+- Broken redirect targets no longer cause an error during export.
 
 ## [1.0.0] - 2025-04-21
 
