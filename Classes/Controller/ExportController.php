@@ -35,7 +35,12 @@ final class ExportController
 	public function handle(ServerRequestInterface $request): ResponseInterface
 	{
 		$exportDemand = new ExportDemand();
-		$count = $this->redirectRepository->countRedirectsByByDemand($exportDemand);
+		// the countRedirectsByDemand method was misspelled for a long time and got fixed in TYPO3 13.4.23 - use the one that's available
+		if (method_exists($this->redirectRepository, 'countRedirectsByByDemand')) {
+			$count = $this->redirectRepository->countRedirectsByByDemand($exportDemand);
+		} else {
+			$count = $this->redirectRepository->countRedirectsByDemand($exportDemand);
+		}
 		$exportDemand->setLimit($count);
 
 		$redirects = $this->redirectRepository->findRedirectsByDemand($exportDemand);
