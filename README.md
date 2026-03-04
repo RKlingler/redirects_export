@@ -1,6 +1,7 @@
 [![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
 [![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
-[![TYPO3 13](https://img.shields.io/badge/Donate-PayPal-blue.svg)](http://paypal.me/rukling)
+[![TYPO3 14](https://img.shields.io/badge/TYPO3-14-orange.svg)](https://get.typo3.org/version/14)
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](http://paypal.me/rukling)
 
 # TYPO3 Extension: Redirects Export
 
@@ -9,7 +10,7 @@ This extension allows you to export your redirects from the TYPO3 redirects back
 
 ## Features
 
-* Supports TYPO3 12 and 13
+* Supports TYPO3 12, 13 and 14
 * Exports redirects to a CSV file
 * Adds rendered target URLs to the export
 * Adds formatted duplicates for every datetime column for easier handling in Excel or other spreadsheet programs

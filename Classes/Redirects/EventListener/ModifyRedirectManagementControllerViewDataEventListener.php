@@ -17,6 +17,7 @@ use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Core\Authentication\AbstractUserAuthentication;
 use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Imaging\IconFactory;
+use TYPO3\CMS\Core\Imaging\IconSize;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Redirects\Event\ModifyRedirectManagementControllerViewDataEvent;
@@ -42,7 +43,7 @@ final class ModifyRedirectManagementControllerViewDataEventListener
 			->setHref((string)$this->uriBuilder->buildUriFromRoute('export_redirects'))
 			->setTitle($this->getTranslatedLabel('LLL:EXT:redirects_export/Resources/Private/Language/locallang.xlf:exportRedirects'))
 			->setShowLabelText(true)
-			->setIcon($this->iconFactory->getIcon('actions-download', Icon::SIZE_SMALL));
+			->setIcon($this->iconFactory->getIcon('actions-download', (class_exists(IconSize::class) ? IconSize::SMALL : Icon::SIZE_SMALL))); // keep Icon::SIZE_SMALL as fallback in TYPO3 12
 
 		// add button to button bar
 		$buttonBar->addButton($exportRedirectsButton, ButtonBar::BUTTON_POSITION_RIGHT, 0);

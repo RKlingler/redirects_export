@@ -5,11 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Added
+
+- Added support for TYPO3 14
+
 ## [1.0.2] - 2026-03-03
 
 ### Fixed
 
-- Fixd failing exports caused by the renaming of an internal method in the TYPO3 core redirects extension (`RedirectRepository::countRedirectsByByDemand()`) in TYPO3 13.4.23 and 12.4.41.
+- Fixed failing exports caused by the renaming of an internal method in the TYPO3 core redirects extension (`RedirectRepository::countRedirectsByByDemand()`) in TYPO3 13.4.23 and 12.4.41.
 
 ## [1.0.1] - 2025-04-27
 
